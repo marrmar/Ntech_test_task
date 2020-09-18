@@ -1,4 +1,4 @@
-from modules.simple_net import SimpleCnn
+from modules.net import DenseNet
 import torch
 from pathlib import Path
 import cv2
@@ -19,7 +19,7 @@ if __name__ == '__main__':
     LABELS = {0: 'female', 1: 'male'}
     files = [*map(str, list(Path(data_path).rglob('*.jpg')))]
 
-    model = SimpleCnn()
+    model = DenseNet(38, 1)
     checkpoint = torch.load(checkpoint_path)
     model.load_state_dict(checkpoint['state_dict'])
     model.eval()
