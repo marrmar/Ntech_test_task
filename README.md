@@ -4,35 +4,41 @@
 
 Задание: Предсказывать пол человека по фотографии.
 
-##Установить зависимости:
+## Установить зависимости:
 
+~~~
 pip install -r requirements.txt
+~~~
 
-##Чтобы запустить тренировку надо:
-###Сгенировать тренировочную и валидационную выборки
+## Чтобы запустить тренировку надо:
 
-Для этого нужно запустить:
+### Сгенировать тренировочную и валидационную выборки
 
+~~~
 make_val.py [-h] --path PATH [--percentage PERCENTAGE]
+~~~
 
-###Запустить тренировку
 
+### Запустить тренировку
+
+~~~
 train.py [-h] --path PATH --epochs EPOCHS [--batch_size BATCH_SIZE]
                [--resize_size RESIZE_SIZE] [--lr LR]
                [--start_from_checkpoint START_FROM_CHECKPOINT]
                [--weights_only WEIGHTS_ONLY]
                [--drop_after_epoch DROP_AFTER_EPOCH]
                [--checkpoint_path CHECKPOINT_PATH]
+~~~
 
 ## Предсказать для папки с картинками
-
+~~~
 predict.py [-h] --images_path IMAGES_PATH --checkpoint_path
                  CHECKPOINT_PATH
+~~~
 
-Дотренировать до логического завершения на собственном ноутбуке не получается в связи с малой мощностью.
+Дотренировать до логического завершения на собственном ноутбуке не получается в связи с малой мощностью, но на последней эпохе accuracy на валидационной выборке: **0.9684**. И кажется, может тренироваться дальше.
 
-На последней эпохе accuracy на валидационной выборке: 0.9684
+## Скачать чекпойнт
+[Можно здесь](
+https://drive.google.com/file/d/1cXFTlJKrPN7FaEDOHUH9FouwysUw7ZkF/view?usp=sharing)
 
-##Скачать чекпойнт
-
-https://drive.google.com/file/d/1cXFTlJKrPN7FaEDOHUH9FouwysUw7ZkF/view?usp=sharing
